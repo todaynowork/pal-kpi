@@ -1,0 +1,20 @@
+html(ng-app='palKpiApp')
+  include ./template/head.jade
+  body
+    h2= title2
+    include ./template/common_info.jade
+    div(ng-controller='CourseController as controller')
+      br
+      table
+        thead
+          tr
+            th Course
+            th Email
+            th Enrolled?
+        tbody
+          tr(ng-repeat="course in controller.courseList")
+            td {{course.key}}
+            td {{course.value.userId}}
+            td
+              span(ng-if="course.value.enroll") enrolled
+              span(ng-if="!course.value.enroll") not enrolled

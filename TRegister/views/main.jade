@@ -1,0 +1,15 @@
+html(ng-app='palKpiApp')
+  include ./template/head.jade
+  body
+    include ./template/common_info.jade
+    h2= title2
+    div(ng-controller='CourseController as controller')
+      label= 'Your email address is ' + user.id
+      form
+        label Descript: would you like attend {{controller.info.text}} ?
+        span.animate-if(ng-if='!controller.enrolledCourse.enroll')
+          input.btn-primary(type='submit', value='Enroll',ng-disabled="hasButtonPress", ng-click='controller.enroll()')
+        span.animate-if(ng-if='controller.enrolledCourse.enroll')
+          input.btn-primary(type='submit', value='Cancel',ng-disabled="hasButtonPress", ng-click='controller.cancel()')          
+      span.animate-if(ng-if='controller.enrolledCourse.enroll')   
+        label You({{userId}}) have enrolled course {{controller.enrolledCourse.title}}

@@ -1,0 +1,19 @@
+html(ng-app='palKpiApp')
+  include ./template/head.jade
+  body
+    h2 Todo
+    div(ng-controller='TodoListController as todoList')
+      span {{todoList.remaining()}} of {{todoList.todos.length}} remaining
+      |       [ 
+      a(href='', ng-click='todoList.archive()') archive
+      |  ]
+      ul.unstyled
+        li(ng-repeat='todo in todoList.todos')
+          label.checkbox
+            input(type='checkbox', ng-model='todo.done')
+            span(class='done-{{todo.done}}') {{todo.text}}
+      form(ng-submit='todoList.addTodo()')
+        input(type='text', ng-model='todoList.todoText', size='30', placeholder='add new todo here')
+        input.btn-primary(type='submit', value='add')      
+    a(href='/main') Go to main
+    include ./template/foot.jade

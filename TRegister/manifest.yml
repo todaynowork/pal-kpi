@@ -1,0 +1,10 @@
+applications:
+- path: .
+  memory: 256M
+  instances: 1
+  domain: w3ibm.mybluemix.net
+  name: TRegistration
+  host: tregistration
+  disk_quota: 1024M
+  services:
+  - W3 APIm-26

@@ -1,0 +1,23 @@
+{
+  "name": "pal-kpi",
+  "description": "pal-kpi",
+  "main": "",
+  "authors": [
+    "zhiguodu <duzhiguo@cn.ibm.com>"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/3rdparty",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "^1.5.2",
+    "jquery": "1.12.2"
+  }
+}

@@ -1,0 +1,26 @@
+
+<table>
+  <thead>
+  <tr>
+    <th>Name(click to enroll)</th>
+    <th>Description</th>
+    <th>More </th>
+    <th>Cash </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="course in courseList.coursePool">
+    <td><a href="#/enroll/{{course.id}}">{{course.title}}</a></td>
+    <td>{{course.text}}</td>
+    <td>{{course.location}}</td>
+    <td><input type="text" ng-model="course.cash" placeholder="Enter money"/><td>
+  </tr>
+  <tr>
+    <td colspan="4">
+    <span class='animate-if' >
+        <input type='submit' value='Pay' ng-disabled="hasButtonPress" ng-click='courseList.pay()' class = "btn-primary"/>
+    </span>
+    </td>
+  </tr>
+  </tbody>
+</table>

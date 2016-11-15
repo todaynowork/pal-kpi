@@ -1,0 +1,14 @@
+      <label> Your email address is {{userId}} </label>
+      <form>
+        <label>Descript: would you like attend {{enrollCourse.info.text}} ?</label> 
+        <span class='animate-if' ng-if='!enrollCourse.enrolledCourse.enroll'>
+          <input type='submit' value='Enroll' ng-disabled="hasButtonPress" ng-click='enrollCourse.enroll()' class = "btn-primary"/>
+        </span>
+        
+        <span class='animate-if' ng-if='enrollCourse.enrolledCourse.enroll'>
+          <input type='submit' value='Cancel' ng-disabled="hasButtonPress" ng-click='enrollCourse.cancel()' class = "btn-primary"/>
+        </span>
+      </form>       
+      <span class='animate-if' ng-if='enrollCourse.enrolledCourse.enroll'>
+        <label> You({{userId}}) have enrolled course {{enrollCourse.enrolledCourse.title}}</label>
+      </span>  
